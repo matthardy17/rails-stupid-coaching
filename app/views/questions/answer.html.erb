@@ -1,9 +1,20 @@
-<p>
-  <% if @question.include?("?") %>
-    <%= "Silly question, get dressed and go to work!" %>
-  <% elsif @question == "I am going to work" %>
-    <%= "Great!" %>
-  <% else %>
-    <%= "I don't care, get dressed and to go work!" %>
-  <% end %>
+<div class="question">
+    <%= @question%>
+      <p>
+        <%= "- You" %>
+      </p>
+  </div>
+  <div class="answer">
+    <% if @question.include?("?") %>
+      <%= "Silly question, get dressed and go to work!" %>
+    <% elsif @question == "I am going to work" %>
+      <%= "Great!" %>
+    <% else %>
+      <%= "I don't care, get dressed and to go work!" %>
+    <% end %>
+    <p><%= " - Your coach" %></p>
+</div>
+
+
+<p class="link"><%= link_to "Ask another question", ask_path %>
 </p>
